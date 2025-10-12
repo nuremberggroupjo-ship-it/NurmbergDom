@@ -7,7 +7,7 @@ const INITIAL_SNAKE_LENGTH = 5;
 
 type Direction = "UP" | "DOWN" | "LEFT" | "RIGHT";
 type Point = { x: number; y: number };
-
+//
 type Props = {
   onGameOver: () => void;
   showTouchControls?: boolean;
@@ -53,7 +53,9 @@ export default function Game({ onGameOver, showTouchControls = false }: Props) {
         x: Math.floor(Math.random() * gridCols),
         y: Math.floor(Math.random() * gridRows),
       };
-    } while (snakePositions.some((seg) => seg.x === newFood.x && seg.y === newFood.y));
+    } while (
+      snakePositions.some((seg) => seg.x === newFood.x && seg.y === newFood.y)
+    );
     return newFood;
   };
 
